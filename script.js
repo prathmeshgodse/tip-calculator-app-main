@@ -19,6 +19,7 @@ const peopleAlertMessage = document.querySelector(
   ".people-count-header .alert-msg"
 )
 let billAmount, tipAmount, peopleCount
+let isResetEnabled = false
 
 //set bill amount
 function setBillAmount() {
@@ -29,8 +30,9 @@ function setBillAmount() {
     billAlertMessage.classList.add("hidden")
     billAmountText.removeAttribute("id")
     billAmount = parseInt(billAmountText.value)
+    calculateBill()
   }
-  calculateBill()
+  if (!isResetEnabled) setResetButton(true)
 }
 
 //set tip percentage
@@ -50,8 +52,8 @@ function setTipAmount() {
       tipAmount = this.value
     }
   }
-
   calculateBill()
+  if (!isResetEnabled) setResetButton(true)
 }
 
 //set people count
@@ -64,9 +66,9 @@ function setPeopleCount() {
     peopleAlertMessage.classList.add("hidden")
     peopleCountText.removeAttribute("id")
     peopleCount = parseInt(peopleCountText.value)
+    calculateBill()
   }
-
-  calculateBill()
+  if (!isResetEnabled) setResetButton(true)
 }
 
 function calculateBill() {
@@ -85,7 +87,23 @@ function calculateBill() {
   }
 }
 
+function setResetButton(state) {
+  if (state) {
+    resetButton.classList.remove("disabled")
+    resetButton.classList.add("enabled")
+    isResetEnabled = true
+  } else {
+    resetButton.classList.add("disabled")
+    resetButton.classList.remove("enabled")
+    isResetEnabled = false
+  }
+}
+
 function reset() {
+  billAmount = 0
+  tipAmount = 0
+  peopleCount = 0
+  setResetButton(false)
   billAmountText.value = null
   peopleCountText.value = null
   peopleCountText.removeAttribute("id")

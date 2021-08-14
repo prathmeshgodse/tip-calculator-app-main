@@ -174,13 +174,24 @@ body {
 }
 
 .reset {
-  background-color: var(--strong-cyan);
-  color: var(--very-dark-cyan);
   padding: 7px 0;
   margin-bottom: 10px;
+  color: var(--very-dark-cyan);
 }
 
-.reset:hover {
+.reset.disabled {
+  background-color: var(--dark-grayish-cyan);
+}
+
+.reset.enabled {
+  background-color: var(--strong-cyan);
+}
+
+.reset.disabled:hover {
+  cursor: not-allowed;
+}
+
+.reset.enabled:hover {
   background-color: var(--light-grayish-cyan-background);
 }
 
