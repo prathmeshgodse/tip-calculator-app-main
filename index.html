@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Tip calculator app</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="logo">
+      <img src="images/logo.svg" alt="spliter-logo" />
+    </div>
+    <div class="container">
+      <div class="col col-left">
+        <div class="bill-amt-container">
+          <div class="bill-amt-header header-container">
+            <h5 class="bill-amt-header small-headers">Bill</h5>
+            <h5 class="alert-msg hidden">Can't be zero</h5>
+          </div>
+          <div class="dollar-symbol"></div>
+          <input class="bill-amt-text text-box" type="number" placeholder="0" />
+        </div>
+        <div class="tip-amt-container col-left-child">
+          <h5 class="tip-amt-header small-headers">Select Tip %</h5>
+          <div class="tip-amt-buttons grid-container">
+            <button class="tip-amt-btn btn" value="5">5%</button>
+            <button class="tip-amt-btn btn" value="10">10%</button>
+            <button class="tip-amt-btn btn" value="15">15%</button>
+            <button class="tip-amt-btn btn" value="25">25%</button>
+            <button class="tip-amt-btn btn" value="50">50%</button>
+            <input
+              class="text-box tip-amt-text"
+              type="number"
+              placeholder="Custom"
+            />
+          </div>
+        </div>
+        <div class="people-count-container col-left-child">
+          <div class="people-count-header header-container">
+            <h5 class="people-count-header small-headers">Number of People</h5>
+            <h5 class="alert-msg hidden">Can't be zero</h5>
+          </div>
+          <input
+            class="people-count-text text-box"
+            type="number"
+            placeholder="0"
+          />
+        </div>
+      </div>
+      <div class="col col-right">
+        <div class="total-amt-container">
+          <div class="total-tip-amt-container flex-container">
+            <div class="total-tip-amt-header-container">
+              <h3 class="small-header-right">Tip Amount</h3>
+              <h5 class="smaller-header-right">/ person</h5>
+            </div>
+            <div class="total-tip-amt total-amt">
+              <h1 class="total-tip-amt-perhead">$0.00</h1>
+            </div>
+          </div>
+          <div class="total-bill-amt-container flex-container">
+            <div class="total-bill-amt-header-container">
+              <h3 class="small-header-right">Total</h3>
+              <h5 class="smaller-header-right">/ person</h5>
+            </div>
+            <div class="total-bill-amt total-amt">
+              <h1 class="total-bill-amt-perhead">$0.00</h1>
+            </div>
+          </div>
+        </div>
+        <button class="reset btn">RESET</button>
+      </div>
+    </div>
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Your Name Here</a>.
+    </div>
+  </body>
+  <script src="script.js"></script>
+</html>

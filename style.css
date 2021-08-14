@@ -1,0 +1,237 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --very-dark-cyan: hsl(183, 100%, 15%);
+  --dark-grayish-cyan-text: hsl(186, 14%, 43%);
+  --dark-grayish-cyan: hsl(184, 14%, 56%);
+  --light-grayish-cyan-background: hsl(185, 41%, 84%);
+  --light-grayish-cyan: hsl(189, 41%, 97%);
+  --white: hsl(0, 0%, 100%);
+  --strong-cyan: hsl(172, 67%, 45%);
+  --alert-msg: rgb(248, 109, 109);
+  --font-family: "Space Mono", monospace;
+  font-size: 24px;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  margin-top: 4.5%;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+body {
+  font-family: "Space Mono", monospace;
+  background-color: var(--light-grayish-cyan-background);
+}
+
+.logo {
+  width: max-content;
+  margin: 4% auto 3% auto;
+}
+
+.container {
+  width: 55%;
+  margin: 0 auto;
+  background-color: var(--white);
+  border-radius: 15px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-evenly;
+  box-shadow: -1px 17px 50px -18px var(--dark-grayish-cyan);
+  -webkit-box-shadow: -1px 17px 50px -18px var(--dark-grayish-cyan);
+  -moz-box-shadow: -1px 17px 50px -18px var(--dark-grayish-cyan);
+}
+
+.col {
+  flex: 1 0 50%;
+  padding: 1rem;
+}
+
+.col-right {
+  background-color: var(--very-dark-cyan);
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.col-left-child {
+  padding-top: 10%;
+}
+
+.small-headers {
+  color: var(--dark-grayish-cyan);
+  padding-bottom: 0.5rem;
+  font-weight: 600;
+  font-size: 0.7rem;
+}
+
+.alert-msg {
+  color: var(--alert-msg);
+  font-size: 0.7rem;
+}
+
+#alert-text-box {
+  border-color: var(--alert-msg);
+}
+
+.hidden {
+  display: none;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.text-box {
+  font-family: var(--font-family);
+  font-weight: 700;
+  border-radius: 5px;
+  font-size: 1rem;
+  padding: 10px;
+  text-align: right;
+  border: 3px solid transparent;
+  background-color: var(--light-grayish-cyan);
+  color: var(--very-dark-cyan);
+  width: 100%;
+  outline: none;
+}
+
+.text-box::placeholder {
+  color: var(--dark-grayish-cyan);
+}
+
+.text-box:focus::placeholder {
+  color: transparent;
+}
+
+.text-box:focus {
+  border: 3px solid var(--strong-cyan);
+}
+
+.tip-amt-text {
+  text-align: center;
+  padding: 0;
+}
+
+.tip-amt-text:focus {
+  text-align: right;
+  padding-right: 5px;
+}
+
+.custom-tip-amt {
+  border-color: var(--very-dark-cyan);
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  column-gap: 0.5rem;
+  row-gap: 0.5rem;
+}
+
+.btn:hover {
+  cursor: pointer;
+  background-color: var(--strong-cyan);
+  color: var(--very-dark-cyan);
+}
+
+.tip-amt-btn.clicked {
+  background-color: var(--strong-cyan);
+  color: var(--very-dark-cyan);
+  border: 3px solid var(--very-dark-cyan);
+}
+
+.btn {
+  font-family: var(--font-family);
+  font-weight: 600;
+  color: var(--white);
+  background-color: var(--very-dark-cyan);
+  border-radius: 5px;
+  border: none;
+  font-size: 1rem;
+}
+
+.reset {
+  background-color: var(--strong-cyan);
+  color: var(--very-dark-cyan);
+  padding: 7px 0;
+  margin-bottom: 10px;
+}
+
+.reset:hover {
+  background-color: var(--light-grayish-cyan-background);
+}
+
+.bill-amt-text {
+  background-image: url("images/icon-dollar.svg");
+  background-repeat: no-repeat;
+  background-position: 5% 50%;
+}
+
+.people-count-text {
+  background-image: url("images/icon-person.svg");
+  background-repeat: no-repeat;
+  background-position: 5% 50%;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10%;
+  align-items: center;
+}
+
+.small-header-right {
+  font-size: 0.7rem;
+  color: var(--light-grayish-cyan);
+}
+
+.smaller-header-right {
+  font-size: 0.5rem;
+  color: var(--dark-grayish-cyan);
+}
+
+.total-amt {
+  color: var(--strong-cyan);
+  font-size: 1rem;
+}
+
+@media (max-width: 1400px) {
+  .container {
+    width: 100%;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    max-width: 22em;
+  }
+
+  .attribution {
+    margin: 0;
+  }
+
+  .grid-container {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
+}
